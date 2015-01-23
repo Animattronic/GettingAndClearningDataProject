@@ -10,18 +10,18 @@ The script run_analysis.R in this repository contains the logic necessary to per
 3. Translate feature names to human-friendly form
 4. Merge test and training data
 5. Aggregate data
-6. 6. Save data to selected location
+6. Save data to current directory
 
 All this steps are called one by one by function
 
 ```
-process_data <- function(filepath="./aggregated_data.csv"){
+process_data <- function(){
   feature_names <- read_feature_names()
   test_data <- read_full_data("test", feature_names)
   train_data <- read_full_data("train", feature_names)
   all_data <- merge_test_and_train_data(test_data, train_data)
   perform_aggregation(all_data)
-  save_data(aggregated_data, filepath)
+  save_data(aggregated_data)
 }
 ```
 
@@ -68,14 +68,12 @@ table(all.data$subject, all.data$activity)
 
 # 3. Script usage
 
-All you need to do in order to run this analysis is to start the script (from the command line or) RStudio. In order to work properly the script must be in the same directory, as the test/train directories and fetures.txt files. It will save the tidy data set in the same directory or (if you pass FULL PATH WITH FILENAME) in the selected directory.
+All you need to do in order to run this analysis is to start the script (from the command line or) RStudio. In order to work properly the script must be in the same directory, as the test/train directories and fetures.txt files. It will save the tidy data set in the same directory.
 
 Here are the steps necessary to start the script properly:
 
 1. Place the script in the same directory as assignment data 
-2. Start the script from cmd line or from rstudio:
-  a) without any arguments - it will save a file aggregated_data.csv to current directory
-  b) with FULL PATH WITH FILENAME - it will save the file there (e.g. C:\data\mydata\somefile.txt)
+2. Start the script from cmd line or from rstudio
 3. Enjoy the new tidy data set created
 
 # 4. Codebook and aggregation process details
