@@ -89,7 +89,7 @@ perform_aggregation <- function(all_data){
 
 # saves the tidy data set in a given location
 save_data <- function(data){
-  write.table(x = data, file = "./aggregated_data.csv", sep = ",")
+  write.table(x = data, file = "./aggregated_data.csv", sep = ",", row.names = FALSE)
 }
 
 # the main procedure which combines all necessary steps to complete the task
