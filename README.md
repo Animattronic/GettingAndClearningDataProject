@@ -72,7 +72,7 @@ All you need to do in order to run this analysis is to start the script (from th
 
 Here are the steps necessary to start the script properly:
 
-1. Place the script in the same directory as assignment data 
+1. Place the script in the same directory as assignment data (when running from RStudio remember to use setwd(DATA DIR GOES HERE!!!)
 2. Start the script from cmd line or from rstudio
 3. Enjoy the new tidy data set created
 
